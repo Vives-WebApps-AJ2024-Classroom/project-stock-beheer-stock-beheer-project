@@ -34,7 +34,7 @@ const PlaceOrder = () => {
             <form>
                 <input name="datum_aanvraag" placeholder="Datum Aanvraag" onChange={handleChange} required/>
                 <input name="aantal" placeholder="Aantal" onChange={handleChange} />
-                <input name="korte_omschrijving" placeholder="Description" onChange={handleChange} required/>
+                <input name="korte_omschrijving" placeholder="Beschrijving" onChange={handleChange} required/>
                 <select name="winkel" value={order.winkel} onChange={handleChange} required>
                     <option value="Conrad">Conrad</option>
                     <option value="Digi-Key">Digi-Key</option>
