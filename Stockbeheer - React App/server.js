@@ -58,15 +58,15 @@ app.post('/order', (req, res) => {
     const sql = `INSERT INTO bestellingen (datum_aanvraag, aantal, korte_omschrijving, winkel, artikelnummer, url, totale_prijs, aangevraagd_door, levertijd)
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
     const values = [
-        order.datum_aanvraag,
+        order.datum_aanvraag,  // Ensure date format is YYYY-MM-DD
         order.aantal,
-        order.korte_omschrijving,
+        order.korte_omschrijving,  // Use korte_omschrijving here
         order.winkel,
         order.artikelnummer,
         order.url,
         order.totale_prijs,
         order.aangevraagd_door,
-        order.levertijd,
+        order.levertijd,  // Ensure levertijd is a valid date format YYYY-MM-DD
     ];
     db.query(sql, values, (err, result) => {
         if (err) return res.status(500).send(err);
